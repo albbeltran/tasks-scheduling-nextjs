@@ -96,25 +96,25 @@ export default function SchedulingHistory() {
                       key={process.id}
                       className="hover:bg-zinc-800 transition-colors"
                     >
-                      <td className="py-2 px-4 border-b border-zinc-800">
+                      <td className="py-2 px-4 border-b border-zinc-800 text-white">
                         {process.execution_order}
                       </td>
-                      <td className="py-2 px-4 border-b border-zinc-800">
+                      <td className="py-2 px-4 border-b border-zinc-800 text-white">
                         {process.task?.name || 'N/A'}
                       </td>
-                      <td className="py-2 px-4 border-b border-zinc-800">
+                      <td className="py-2 px-4 border-b border-zinc-800 text-white">
                         {process.task_id}
                       </td>
-                      <td className="py-2 px-4 border-b border-zinc-800">
+                      <td className="py-2 px-4 border-b border-zinc-800 text-white">
                         {process.task?.duration ?? 'N/A'}
                       </td>
-                      <td className="py-2 px-4 border-b border-zinc-800">
+                      <td className="py-2 px-4 border-b border-zinc-800 text-white">
                         {new Date(process.task?.arrival_time ?? '').toLocaleTimeString()}
                       </td>
-                      <td className="py-2 px-4 border-b border-zinc-800">
+                      <td className="py-2 px-4 border-b border-zinc-800 text-white">
                         {new Date(process.started_at).toLocaleTimeString()}
                       </td>
-                      <td className="py-2 px-4 border-b border-zinc-800">
+                      <td className="py-2 px-4 border-b border-zinc-800 text-white">
                         {new Date(process.ended_at).toLocaleTimeString()}
                       </td>
                     </tr>
