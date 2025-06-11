@@ -1,5 +1,8 @@
 import amqp from "amqplib/callback_api";
 
+const host = process.env.RABBITMQ_HOST || "rabbitmq";
+const port = process.env.RABBITMQ_PORT || 5672;
+
 let _connection: amqp.Connection | null = null;
 let _channel: amqp.ConfirmChannel | null = null;
 
@@ -7,7 +10,7 @@ export async function getAmqpChannel(): Promise<amqp.ConfirmChannel> {
   if(_connection && _channel) return _channel;
 
   return new Promise((resolve, reject) => {
-    amqp.connect(process.env.AMQP_URL!, (connErr, connection) => {
+    amqp.connect(`amqp://${host}:${port}`, (connErr, connection) => {
         if (connErr) {
             _connection = null;
             _channel = null;
